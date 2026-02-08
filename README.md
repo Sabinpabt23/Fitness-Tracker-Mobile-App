@@ -26,10 +26,19 @@ A comprehensive React Native mobile application for tracking workouts, monitorin
 - **Expo** - Development platform and tools
 - **React Navigation Patterns** - Custom tab-based navigation
 
-## 📸 App Screenshots
-
-| Home Screen | Add Workout | Progress Analytics |
-|------------|-------------|-------------------|
-| ![Home](screenshots/home.jpg) | ![Add](screenshots/add.jpg) | ![Progress](screenshots/progress.jpg) |
 
 ## 🏗️ Project Structure
+fitness-tracker-app/
+├── App.js # Main application entry point
+├── src/
+│ ├── screens/ # App screens
+│ │ ├── HomeScreen.js # Dashboard with stats
+│ │ ├── AddWorkoutScreen.js # Workout logging form
+│ │ └── ProgressScreen.js # Analytics and insights
+│ ├── components/ # Reusable components
+│ │ ├── StatsCard.js # Interactive statistics card
+│ │ ├── WorkoutCard.js # Workout display component
+│ │ └── TabBar.js # Custom navigation bar
+│ └── utils/ # Helper functions
+└── package.json # Dependencies
+
