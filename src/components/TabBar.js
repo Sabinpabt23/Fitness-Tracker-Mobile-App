@@ -10,21 +10,51 @@ const TabBar = ({ activeTab, onTabChange, onAddPress }) => {
         style={[styles.tabButton, activeTab === 'home' && styles.activeTab]}
         onPress={() => onTabChange('home')}
       >
+        <Text style={[styles.tabIcon, activeTab === 'home' && styles.activeTabIcon]}>
+          🏠
+        </Text>
         <Text style={[styles.tabText, activeTab === 'home' && styles.activeTabText]}>
-          🏠 Home
+          Home
+        </Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity
+        style={[styles.tabButton, activeTab === 'dashboard' && styles.activeTab]}
+        onPress={() => onTabChange('dashboard')}
+      >
+        <Text style={[styles.tabIcon, activeTab === 'dashboard' && styles.activeTabIcon]}>
+          📊
+        </Text>
+        <Text style={[styles.tabText, activeTab === 'dashboard' && styles.activeTabText]}>
+          Dashboard
         </Text>
       </TouchableOpacity>
       
       <TouchableOpacity style={styles.addButton} onPress={onAddPress}>
-        <Text style={styles.addButtonText}>➕</Text>
+        <Text style={styles.addButtonText}>+</Text>
       </TouchableOpacity>
       
       <TouchableOpacity
         style={[styles.tabButton, activeTab === 'progress' && styles.activeTab]}
         onPress={() => onTabChange('progress')}
       >
+        <Text style={[styles.tabIcon, activeTab === 'progress' && styles.activeTabIcon]}>
+          📈
+        </Text>
         <Text style={[styles.tabText, activeTab === 'progress' && styles.activeTabText]}>
-          📊 Progress
+          Progress
+        </Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity
+        style={[styles.tabButton, activeTab === 'profile' && styles.activeTab]}
+        onPress={() => onTabChange('profile')}
+      >
+        <Text style={[styles.tabIcon, activeTab === 'profile' && styles.activeTabIcon]}>
+          👤
+        </Text>
+        <Text style={[styles.tabText, activeTab === 'profile' && styles.activeTabText]}>
+          Profile
         </Text>
       </TouchableOpacity>
     </View>
@@ -41,23 +71,31 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderTopWidth: 1,
     borderTopColor: '#E0E0E0',
-    height: 70,
-    paddingHorizontal: 20,
+    height: 80,
+    paddingBottom: 10,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   tabButton: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 20,
   },
   activeTab: {
-    borderTopWidth: 2,
-    borderTopColor: '#4A90E2',
+    backgroundColor: '#F0F7FF',
+  },
+  tabIcon: {
+    fontSize: 22,
+    color: '#999',
+    marginBottom: 2,
+  },
+  activeTabIcon: {
+    color: '#4A90E2',
   },
   tabText: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#999',
   },
   activeTabText: {
@@ -66,23 +104,26 @@ const styles = StyleSheet.create({
   },
   addButton: {
     position: 'absolute',
-    bottom: 25,
-    left: width / 2 - 30,
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    bottom: 30,
+    left: width / 2 - 35,
+    width: 70,
+    height: 70,
+    borderRadius: 35,
     backgroundColor: '#4A90E2',
     alignItems: 'center',
     justifyContent: 'center',
-    elevation: 5,
+    elevation: 8,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
-    shadowRadius: 4,
+    shadowRadius: 5,
+    borderWidth: 3,
+    borderColor: 'white',
   },
   addButtonText: {
-    fontSize: 30,
+    fontSize: 32,
     color: 'white',
+    fontWeight: 'bold',
   },
 });
 
